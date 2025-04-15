@@ -5,7 +5,7 @@ import {
   FileText,
   GraduationCap,
 } from "lucide-react";
-import { desc } from "motion/react-client";
+//import { desc } from "motion/react-client";
 
 export const UserData = {
   name: "Mahad",
