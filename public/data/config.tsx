@@ -397,7 +397,7 @@ export const MyResume = {
   name: "Resume",
   icon: <FileText className="scale-[60%]" />,
   href: "/Resume",
-  resumePath: "/data/Mahad Resume.pdf",
+  resumePath: "/data/MahadResume.pdf",
 };
 export const NavItems = {
   MySkills,
