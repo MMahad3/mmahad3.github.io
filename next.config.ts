@@ -10,5 +10,6 @@ const nextConfig: NextConfig = {
     unoptimized: true,
   },
 };
+//sad
 
 export default nextConfig;
