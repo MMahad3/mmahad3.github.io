@@ -23,10 +23,10 @@ export default function SplashScreen({ onFinish }: { onFinish: () => void }) {
     
     <div className="fixed top-0 left-0 w-full h-full bg-black z-50 flex items-center justify-center flex-col animate-fadein">
         <Meteors/>
-      <HyperText className="text-[#00ffcc] text-4xl sm:text-4xl text-[#00ffcc] font-bold">
+      <HyperText className="text-[#00ffcc] text-4xl sm:text-4xl items-center justify-center text-center text-[#00ffcc] font-bold">
         This is Mahad&apos;s portfolio
       </HyperText>
-      <p className="mt-2 text-gray-400">Loading...</p>
+      <p className="mt-2 text-gray-400 items-center justify-center text-center">Loading...</p>
     </div>
   );
 }
