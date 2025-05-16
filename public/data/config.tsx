@@ -115,6 +115,8 @@ export const MySkills = {
           proficiency: 1,
         },
         { name: "Docker", imgpath: "/data/images/docker.svg", proficiency: 1 },
+        { name: "Nginx", imgpath : "/data/images/nginx.png"},
+        { name: "Ngrok", imgpath: "/data/images/ngrok.png"},
         
         
       ],
@@ -214,6 +216,8 @@ export const MySkills = {
       content: [
       
         { name: "NPM", imgpath: "/data/images/npm.svg", proficiency: 1 },
+        { name: "Stable Diffusion", imgpath: "/data/images/stablediffusion.jpeg", proficiency: 1 },
+        { name: "Media Pipe", imgpath: "/data/images/mediapipe.png", proficiency: 1 },
        
         // { name: "Celery", imgpath: "/data/images/celery.svg", proficiency: 1 },
         // { name: "ElectronJS", imgpath: "/data/images/electron.png", proficiency: 1 },
@@ -241,6 +245,28 @@ export const MyProjects = {
   icon: <Box className="scale-[60%]" />,
   href: "/Projects",
   content: [
+    {
+      title: "Gesture 2 Image",
+      Logo: null,
+      type: "Web Application",
+      description:
+        "An AI Project which detects the Hand Gestures and then Generate Images based on those Gestures. It uses MediaPipe Hands and Stable Diffusion models. This Project is a perfect showcase of Deep Learning and Generative AI.",
+      startDate: "Apr 2025",
+      endDate: "May 2025",
+      link: "https://github.com/MMahad3/Gesture-2-Image",
+      tech: ["Python","Stable Diffusion","Media Pipe","Scikit-Learn","React","FastAPI"],
+    },
+    {
+      title: "Movie Recommendation System",
+      Logo: null,
+      type: "Web Application",
+      description:
+          "A Streamlit-based movie recommendation app that suggests movies based on a user's selection. The system utilizes a precomputed cosine similarity matrix to recommend movies that are most similar to the one selected by the user.",
+      startDate: "Mar 2025",
+      endDate: "Apr 2025",
+      link: "https://github.com/MMahad3/Movie-Recommendation-System",
+      tech: ["Python","Pandas","Scikit-Learn"],
+    },
     {
       title: "Fake News Detection",
       Logo: null,
