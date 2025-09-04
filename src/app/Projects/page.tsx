@@ -23,7 +23,8 @@ export default function Projects() {
       .map(
         (group) => group.content.find((item) => item.name === skill)?.imgpath
       )
-      .toSorted()[0];
+      .slice().sort()[0];
+
   }
   return (
     <div className="bg-black h-screen">

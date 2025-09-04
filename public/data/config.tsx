@@ -12,9 +12,9 @@ export const UserData = {
   lastname: "Munir",
   email: "mahadmunir6@gmail.com",
   phone: "+92 334 3005859",
-  profession: "Software Developer | AI Engineer | Data Scientist ",
+  profession: "DevOps Engineer | AI Engineer | Software Developer ",
   about:
-    "I'm a final year Computer Science student at FAST University passionate about building scalable and user-friendly applications. With a solid foundation in AI, Data Science, and Quantum Computing, I enjoy solving complex problems and creating innovative solutions. Currently, I am working on a computer vision-based anomaly detection system for public safety in my final-year project.",
+    "I am a DevOps Engineer with a strong foundation in Cloud Computing, AI, and Software Development. Currently, I am working as an Associate DevOps Engineer at HulHub Pakistan, where I focus on deploying full-stack applications, containerized services, and secure cloud infrastructures on AWS. I graduated from FAST-nuces in June 2025, where I built a strong base in AI and software engineering. I am AWS Cloud Practitioner certified and continuously sharpening my expertise in automation, DevOps, and security practices. Passionate about bridging DevOps, MLOps, and security, my goal is to grow into a Cloud Solution Architect who designs systems that are both innovative and reliable.",
   github: "https://github.com/MMahad3",
   linkedin: "https://www.linkedin.com/in/mahad-munir/",
 };
@@ -117,6 +117,7 @@ export const MySkills = {
         { name: "Docker", imgpath: "/data/images/docker.svg", proficiency: 1 },
         { name: "Nginx", imgpath : "/data/images/nginx.png"},
         { name: "Ngrok", imgpath: "/data/images/ngrok.png"},
+        { name: "Jenkins", imgpath: "/data/images/jenkins.png", proficiency: 1 },
         
         
       ],
@@ -383,6 +384,15 @@ export const MyExperiences = {
       startDate: "Jun 2024",
       endDate: "Aug 2024",
       desc: "Researched fake and genuine currency note detection using machine learning, focusing on computer vision techniques for authentication. Due to mobile camera limitations, the project shifted to a research-based approach. Collaborated with mentors to explore algorithmic solutions and documented key findings on enhancing currency verification methods.",
+    },
+    {
+      logo: "/data/images/hulhub.jpeg",
+      title: "HulHub Pakistan",
+      positions: ["Associate DevOps Engineer"],
+      location: "Karachi, Pakistan",
+      startDate: "Jun 2025",
+      endDate: "Present",
+      desc: "At HulHub, I contribute to the DevOps operations of the company’s flagship product, Beelinks, ensuring smooth deployments and reliable environments. My responsibilities include managing and maintaining staging, QA, and production environments, performing daily staging testing, deployments, and health checks, implementing Jenkins pipelines to automate deployments, and proactive monitoring and troubleshooting to maintain high availability and reliability across environments."
     },
     
   
