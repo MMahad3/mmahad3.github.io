@@ -30,7 +30,7 @@ export default function Navbar() {
                 <div className="text-[#00ffcc] hidden lg:flex hover:text-[#ff00ff] ">{`${UserData.name} ${UserData.lastname}`}</div>
               </Link>
             </div>
-            <div className="mr-4 font-bold flex flex-1 justify-center lg:hidden">
+            <div className="mr-4 text-[#00ffcc] font-bold flex flex-1 justify-center lg:hidden">
               
                 {UserData.name} {UserData.lastname}
               
@@ -42,7 +42,7 @@ export default function Navbar() {
                 onClick={toggleMobileMenu}
                 type="button"
               >
-                <span className="absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
+                <span className="text-[#00ffcc] absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     className="w-8 h-8"
@@ -112,7 +112,7 @@ export default function Navbar() {
             {Object.keys(NavItems).map((item, index) => (
               <li
                 key={index}
-                className="flex items-center p-1 text-lg gap-x-2 text-slate-600 hover:text-red-500"
+                className="text-[#00ffcc] flex items-center p-1 text-lg gap-x-2 text-slate-600 hover:text-red-500"
               >
                 <Link
                   href={NavItems[item as keyof typeof NavItems].href}
