@@ -19,7 +19,7 @@ export default function Contact() {
       <Navbar />
       <Meteors />
       <main
-        className={`flex p-2 lg:px-32 lg:py-20 h-10 w-screen flex-col transition-all duration-1000 animate-fadein`}
+        className={`flex p-2 lg:px-32 lg:py-10 w-screen flex-col justify-center min-h-[calc(100vh-45px)] transition-all duration-1000 animate-fadein`}
       >
         <div
           className={`flex flex-col lg:flex-row lg:justify-normal justify-center items-center`}
@@ -60,14 +60,13 @@ export default function Contact() {
               </div>
             </div>
           </section>
-          <section className="flex flex-1 justify-center items-center w-auto">
+          <section className="flex flex-1 justify-center items-center w-full">
           <Link href="/" passHref>
           <Image
              src={selfpic}
              alt="Self Pic"
-            className="w-80 h-80 object-cover border-4 border-white shadow-[0_0_15px_#00FFFF] shadow-2xl transform transition-transform duration-300 hover:scale-110 hover:shadow-[0_0_15px_#ff00ff]"
+            className="w-60 h-60 lg:w-80 lg:h-80 object-cover border-4 border-[#00ffcc] shadow-[0_0_15px_#00FFFF] shadow-2xl transform transition-transform duration-300 hover:scale-110 hover:shadow-[0_0_15px_#ff00ff] rounded-lg"
             />
-           
            </Link>
           </section>
         </div>

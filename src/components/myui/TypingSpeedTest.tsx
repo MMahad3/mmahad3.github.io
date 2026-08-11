@@ -94,14 +94,24 @@ export default function TypingSpeedTest({ isOpen, onClose }: TypingSpeedTestProp
     let interval: NodeJS.Timeout;
     if (isRunning && timeLeft > 0) {
       interval = setInterval(() => {
-        setTimeLeft((prev) => prev - 1);
+        setTimeLeft((prev) => {
+          if (prev <= 1) {
+            setIsRunning(false);
+            return 0;
+          }
+          return prev - 1;
+        });
       }, 1000);
-    } else if (timeLeft === 0 && isRunning) {
-      setIsRunning(false);
-      calculateResult();
     }
     return () => clearInterval(interval);
-  }, [isRunning, timeLeft, calculateResult]);
+  }, [isRunning]);
+
+  // Handle result calculation when time ends
+  useEffect(() => {
+    if (timeLeft === 0 && isRunning === false && !result) {
+      calculateResult();
+    }
+  }, [timeLeft, isRunning, result, calculateResult]);
 
   // Check for auto-complete when sentence is finished
   useEffect(() => {
@@ -112,6 +122,7 @@ export default function TypingSpeedTest({ isOpen, onClose }: TypingSpeedTestProp
   }, [userInput, currentText, isRunning, calculateResult]);
 
   const startTest = () => {
+    setTimeLeft(15);
     setIsRunning(true);
     setUserInput("");
     setTimeout(() => inputRef.current?.focus(), 100);
