@@ -5,7 +5,6 @@ import Image from "next/image";
 import { Github, Linkedin, UserSearch } from "lucide-react";
 import Link from "next/link";
 import Navbar from "@/components/myui/Navbar";
-import VisitorBadge from "@/components/myui/VisitorBadge";
 import { NumberTicker } from "@/components/magicui/number-ticker";
 import "./globals.css";
 import { ScrollArea } from "@/components/ui/scroll-area";
@@ -41,10 +40,6 @@ export default function Home() {
             <div
               className={`flex flex-col lg:justify-normal justify-center items-center lg:items-start text-center lg:text-start transition-all duration-1000 animate-enterleft`}
             >
-              {/* Visitor Badge */}
-              <div className="mb-6">
-                <VisitorBadge />
-              </div>
               <h1 className="text-[#00ffcc] text-5xl font-bold w-auto flex flex-col">
                 <div className="">
                   <TypingAnimation className="inline text-6xl">
