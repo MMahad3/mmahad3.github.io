@@ -1,7 +1,67 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
 @layer base {
   :root {
-    --radius: 0.5rem}
+    --radius: 0.5rem;
+  }
+}
+
+@layer components {
+  .skill-card {
+    @apply bg-black border border-gray-700 rounded-lg transition-all duration-300;
+  }
+  
+  .skill-card:hover {
+    @apply border-[#ff00ff] shadow-lg shadow-[#ff00ff]/20 scale-105;
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in-down {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.3s ease-in-out;
+}
+
+.animate-fade-in-down {
+  animation: fade-in-down 0.3s ease-in-out;
+}
+
+@keyframes bounce-gentle {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.animate-bounce {
+  animation: bounce-gentle 2s infinite;
 }

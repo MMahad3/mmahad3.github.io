@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
+import ScrollToTop from "@/components/myui/ScrollToTop";
+import Footer from "@/components/myui/Footer";
+import TypingSpeedWidget from "@/components/myui/TypingSpeedWidget";
 
 import "./globals.css";
 
@@ -34,9 +37,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased flex flex-col min-h-screen`}
       >
-        {children}
+        <div className="flex-1">
+          {children}
+        </div>
+        <ScrollToTop />
+        <TypingSpeedWidget />
+        <Footer />
       </body>
     </html>
   );

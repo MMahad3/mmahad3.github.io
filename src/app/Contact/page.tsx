@@ -1,12 +1,13 @@
 import Navbar from "@/components/myui/Navbar";
 import Link from "next/link";
 import { UserData } from "../../../public/data/config";
-import { Mail, Phone } from "lucide-react";
+import { Mail, Phone, Github, Linkedin } from "lucide-react";
 import Image from "next/image";
 import selfpic from "../../../public/selfpic.jpg";
 import { Metadata } from "next";
 import { Meteors } from "@/components/magicui/meteors";
 import { TypingAnimation } from "@/components/magicui/typing-animation";
+import CopyToClipboard from "@/components/myui/CopyToClipboard";
 
 export const metadata: Metadata ={
   title: 'Contact'
@@ -24,25 +25,39 @@ export default function Contact() {
           className={`flex flex-col lg:flex-row lg:justify-normal justify-center items-center`}
         >
           <section className="lg:w-1/2 p-10">
-            <p className="text-[#00ffcc] text-9xl lg:text-7xl font-bold">
+            <div className="text-[#00ffcc] text-9xl lg:text-7xl font-bold">
               <TypingAnimation> Interested in collaborating ? </TypingAnimation>
-            </p>
-            <div className="mt-10 border rounded-xl p-4 w-full">
-              <div className="text-[#00ffcc] text-3xl font-bold mb-2">Contact me!</div>
-              <div className="flex p-2">
-                <Mail className="text-[#00ffcc] mr-2" />
-                <Link
-                  className="text-[#00ffcc] hover:text-[#ff00ff] rounded-full "
-                  href={`mailto:${UserData.email}`}
-                >
-                  {UserData.email}
-                </Link>
+            </div>
+            <div className="mt-10 border-2 border-[#00ffcc] rounded-xl p-6 w-full bg-black hover:border-[#ff00ff] hover:shadow-lg hover:shadow-[#ff00ff]/20 transition-all duration-300">
+              <div className="text-[#00ffcc] text-3xl font-bold mb-6">Contact me!</div>
+              <div className="space-y-4">
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center">
+                    <Mail className="text-[#00ffcc] mr-3" size={20} />
+                    <span className="text-gray-300">{UserData.email}</span>
+                  </div>
+                  <CopyToClipboard text={UserData.email} label="Copy" />
+                </div>
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center">
+                    <Phone className="text-[#00ffcc] mr-3" size={20} />
+                    <span className="text-gray-300">{UserData.phone}</span>
+                  </div>
+                  <CopyToClipboard text={UserData.phone} label="Copy" />
+                </div>
               </div>
-              <div className="flex items-center p-2">
-                  <Phone className="text-[#00ffcc] mr-2" />
-                  <span className="text-[#00ffcc] hover:text-[#ff00ff]">{UserData.phone}</span>
+              
+              <div className="mt-6 border-t border-gray-600 pt-6">
+                <div className="text-gray-400 text-sm mb-4">Follow me on:</div>
+                <div className="flex gap-4">
+                  <Link href="https://github.com/mmahad3" target="_blank" rel="noopener noreferrer" className="text-[#00ffcc] hover:text-[#ff00ff] hover:bg-[#ff00ff]/10 p-2 rounded-lg transition-all duration-300">
+                    <Github size={24} />
+                  </Link>
+                  <Link href="https://linkedin.com/in/mahad-munir" target="_blank" rel="noopener noreferrer" className="text-[#00ffcc] hover:text-[#ff00ff] hover:bg-[#ff00ff]/10 p-2 rounded-lg transition-all duration-300">
+                    <Linkedin size={24} />
+                  </Link>
+                </div>
               </div>
-
             </div>
           </section>
           <section className="flex flex-1 justify-center items-center w-auto">

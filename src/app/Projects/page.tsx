@@ -36,50 +36,52 @@ export default function Projects() {
           className={`my-10 w-full flex justify-center transition-all duration-1000`}
         >
           <div className="flex px-4 md:px-14 justify-center flex-col">
-            <h1 className="text-7xl font-bold flex justify-center mb-5">
+            <h1 className="text-7xl font-bold flex justify-center mb-5 text-[#00ffcc]">
               Projects
             </h1>
-            <div className="flex flex-wrap justify-center gap-y-2 md:gap-x-2">
+            <div className="flex flex-wrap justify-center gap-y-4 md:gap-x-4">
               {MyProjects.content.map((item, index) => {
                 return (
                   <section
                     key={index}
-                    className="flex md:flex-1 flex-col w-full h-auto md:min-w-[300px] md:max-w-[300px] p-5 hover:scale-110 transition-all duration-500 shadow-2xl rounded-xl border border-neutral-200 bg-white text-neutral-950 dark:border-neutral-800 dark:bg-neutral-950 dark:text-neutral-50"
+                    className="flex md:flex-1 flex-col w-full h-auto md:min-w-[300px] md:max-w-[300px] p-5 transition-all duration-500 rounded-xl border-2 border-[#00ffcc] bg-black text-white hover:border-[#ff00ff] hover:shadow-lg hover:shadow-[#ff00ff]/30 group cursor-pointer"
                   >
                       {item.Logo ? (
-                        <Image src={item.Logo} alt="" width={50} height={50} />
+                        <Image src={item.Logo} alt="" width={50} height={50} className="group-hover:scale-110 transition-transform duration-300" />
                       ) : (
                         <></>
                       )}
-                      <div className="font-bold text-lg mt-4 flex items-center">
+                      <div className="font-bold text-lg mt-4 flex items-center text-[#00ffcc] group-hover:text-[#ff00ff] transition-colors duration-300">
                         {item.title}
                         <Link
                           href={item.link}
-                          className="hover:bg-slate-200 transition-all duration-100 rounded-lg ml-2"
+                          className="hover:bg-[#00ffcc] hover:text-black transition-all duration-100 rounded-lg ml-2 p-1"
                         >
                           <ExternalLink className="scale-[60%]" />
                         </Link>
                       </div>
-                      <Separator className="my-4" />
-                      <div className="text-sm text-slate-500 flex items-center mb-2">
-                        <Component className="scale-[70%]" />
-                        {item.type}
+                      <Separator className="my-4 bg-gray-600" />
+                      <div className="text-sm text-gray-300 flex items-center mb-2">
+                        <Component className="scale-[70%] text-[#00ffcc] mr-2" />
+                        <span className="group-hover:text-[#ff00ff] transition-colors duration-300">{item.type}</span>
                       </div>
-                      <div className="text-sm text-slate-500 flex items-center mb-4">
-                        <CalendarClock className="scale-[70%]" />
-                        {item.startDate === ""
-                          ? "Planning"
-                          : item.startDate + " - " + item.endDate}
+                      <div className="text-sm text-gray-300 flex items-center mb-4">
+                        <CalendarClock className="scale-[70%] text-[#00ffcc] mr-2" />
+                        <span className="group-hover:text-[#ff00ff] transition-colors duration-300">
+                          {item.startDate === ""
+                            ? "Planning"
+                            : item.startDate + " - " + item.endDate}
+                        </span>
                       </div>
-                      <div className="text-sm text-slate-500 flex flex-1 mb-4">
+                      <div className="text-sm text-gray-300 flex flex-1 mb-4 group-hover:text-gray-100 transition-colors duration-300">
                         {item.description}
                       </div>
-                      <Separator className="my-4" />
+                      <Separator className="my-4 bg-gray-600" />
                       <div className="flex flex-wrap gap-2">
                         {item.tech.map((item, index) => (
                           <HoverCard openDelay={50} closeDelay={50} key={index}>
                             <HoverCardTrigger asChild>
-                              <div className="w-10 h-10 border border-black rounded-md flex justify-center items-center hover:bg-slate-200 hover:scale-110 transition-all duration-100">
+                              <div className="w-10 h-10 border-2 border-[#00ffcc] rounded-md flex justify-center items-center hover:border-[#ff00ff] hover:bg-[#ff00ff] hover:scale-110 transition-all duration-300 bg-black">
                                 <Image
                                   src={`${getPath(item)}`}
                                   alt=""
@@ -89,7 +91,7 @@ export default function Projects() {
                               </div>
                             </HoverCardTrigger>
                             <HoverCardContent
-                              className="w-auto p-[2px] px-3 text-sm"
+                              className="w-auto p-[2px] px-3 text-sm bg-black border border-[#00ffcc] text-[#00ffcc]"
                               side="top"
                             >
                               {item}

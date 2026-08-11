@@ -21,15 +21,15 @@ export default function Experience() {
           <div
             className={`my-10 w-full lg:w-[70%] flex flex-col justify-center items-center transition-all duration-1000 lg:gap-y-0 gap-y-3`}
           >
-            <h1 className="lg:text-7xl text-5xl font-bold mb-8">Experience</h1>
+            <h1 className="lg:text-7xl text-5xl font-bold mb-8 text-[#00ffcc]">Experience</h1>
             {MyExperiences.content.map((details, index) => (
               <section
                 className="flex even:flex-row odd:flex-row-reverse w-full justify-center lg:p-0 p-2"
                 key={index}
               >
-                <Card className="flex flex-1 h-auto shadow-2xl border-slate-300 p-6 hover:scale-110 transition-all duration-500">
+                <Card className="flex flex-1 h-auto border-[#00ffcc] border-2 bg-black p-6 hover:border-[#ff00ff] hover:shadow-lg hover:shadow-[#ff00ff]/30 transition-all duration-500 cursor-pointer group">
                   <div className="flex">
-                    <div className="mr-4 h-[70px] min-w-[50px] max-w-[50px] flex justify-center items-center">
+                    <div className="mr-4 h-[70px] min-w-[70px] max-w-[70px] flex justify-center items-center ring-2 ring-[#00ffcc] group-hover:ring-[#ff00ff] rounded-full transition-all duration-300">
                       <Image
                         src={details.logo}
                         alt=""
@@ -38,14 +38,14 @@ export default function Experience() {
                         className="rounded-full"
                       />
                     </div>
-                    <div className="flex flex-col">
-                      <div className="font-semibold text-lg mt-2 flex">
+                    <div className="flex flex-col flex-1">
+                      <div className="font-semibold text-lg mt-2 flex text-[#00ffcc] group-hover:text-[#ff00ff] transition-colors duration-300">
                         {details.title}
                       </div>
-                      <div className=" text-sm flex flex-wrap">
+                      <div className=" text-sm flex flex-wrap text-gray-300">
                         {details.positions.map((pos, index) => (
                           <div className="flex" key={index}>
-                            <div>{pos}</div>
+                            <div className="group-hover:text-[#ff00ff] transition-colors duration-300">{pos}</div>
                             <ChevronsRight
                               className={`${
                                 index === details.positions.length - 1
@@ -56,17 +56,16 @@ export default function Experience() {
                           </div>
                         ))}
                       </div>
-                      <Separator className="mt-1 mb-3" />
-                      <div className="text-sm text-slate-500 flex items-center mb-2">
-                        <MapPin className="scale-[70%]" />
+                      <Separator className="mt-1 mb-3 bg-gray-600" />
+                      <div className="text-sm text-gray-400 flex items-center mb-2">
+                        <MapPin className="scale-[70%] text-[#00ffcc]" />
                         {details.location}
                       </div>
-                      <div className="text-sm text-slate-500 flex items-center mb-4">
-                        <CalendarClock className="scale-[70%]" />
+                      <div className="text-sm text-gray-400 flex items-center mb-4">
+                        <CalendarClock className="scale-[70%] text-[#00ffcc]" />
                         {details.startDate} - {details.endDate}
                       </div>
-                      <div className="text-sm text-slate-500 flex items-center mb-4">
-                        {/* <Award className="scale-[80%]" /> */}
+                      <div className="text-sm text-gray-300 flex items-center mb-4 group-hover:text-gray-200 transition-colors duration-300">
                         {details.desc}
                       </div>
                     </div>
@@ -75,12 +74,12 @@ export default function Experience() {
                 <div className="lg:flex lg:flex-col items-center mx-4 hidden ">
                   <Separator
                     orientation="vertical"
-                    className="flex flex-1 bg-slate-400"
+                    className="flex flex-1 bg-[#00ffcc]"
                   />
-                  <CirclePlus />
+                  <CirclePlus className="text-[#ff00ff]" />
                   <Separator
                     orientation="vertical"
-                    className="flex flex-1 bg-slate-400"
+                    className="flex flex-1 bg-[#00ffcc]"
                   />
                 </div>
                 <Card className="lg:flex lg:flex-1 opacity-0 hidden p-6"></Card>

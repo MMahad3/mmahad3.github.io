@@ -42,9 +42,9 @@ export default function Skills() {
                         return (
                           <Card
                             key={index}
-                            className={`flex flex-row justify-start lg:flex-1 w-full md:min-w-[49%] md:max-w-[49%] lg:min-w-[30%] lg:max-w-[30%] p- h-14 hover:h-32 hover:border-slate-400 group items-center transition-all duration-300 ease-in-out overflow-clip`}
+                            className={`flex flex-row justify-start lg:flex-1 w-full md:min-w-[49%] md:max-w-[49%] lg:min-w-[30%] lg:max-w-[30%] h-14 hover:h-32 group items-center transition-all duration-300 ease-in-out overflow-clip bg-black border border-gray-700 hover:border-[#ff00ff] hover:shadow-lg hover:shadow-[#ff00ff]/20 cursor-pointer`}
                           >
-                            <div className="font-bold font-mono items-start flex w-full pl-5">
+                            <div className="font-bold font-mono items-start flex w-full pl-5 text-[#00ffcc]">
                               {details.name}
                             </div>
                             <Image
@@ -52,14 +52,9 @@ export default function Skills() {
                               alt=""
                               width={175}
                               height={1}
-                              className="opacity-80"
+                              className="opacity-80 group-hover:opacity-100 transition-opacity duration-300"
                               draggable={false}
                             />
-                            {/* <div
-                      className={`group-hover:flex text-transparent group-hover:text-black transition-all duration-500 ease-in-out`}
-                      >
-                      Proficiency: {details.proficiency}
-                    </div> */}
                           </Card>
                         );
                       })}

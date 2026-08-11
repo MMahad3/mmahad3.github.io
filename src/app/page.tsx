@@ -59,60 +59,64 @@ export default function Home() {
                   <div className="absolute inset-x-[37.5%] top-0 bg-gradient-to-r from-transparent via-sky-500 to-transparent h-[2px]" />
                 </div>
               </h1>
-              <h2 className="pt-4 pb-2 text-lg font-mono text-gray-600">
+              <h2 className="pt-4 pb-2 text-lg font-mono text-[#00ffcc]">
                 {UserData.profession}
               </h2>
               <p className="text-white flex lg:w-auto pb-4 px-4 lg:pr-20 lg:px-0">
                 {UserData.about}
               </p>
-              <div className="text-white flex justify-evenly items-center  w-[80%] h-auto p-4 mb-2">
+              <div className="text-white flex justify-evenly items-center  w-[80%] h-auto p-6 mb-2 border-2 border-[#00ffcc] rounded-lg bg-black/50 hover:border-[#ff00ff] hover:shadow-lg hover:shadow-[#ff00ff]/20 transition-all duration-300">
                 <div className="h-full items-center flex flex-col">
-                  <div className="flex text-5xl">
+                  <div className="flex text-5xl text-[#00ffcc]">
                     <NumberTicker
                       value={getCompletedProjects()}
-                      className="text-white text-5xl font-medium tracking-tighter flex-1 justify-center flex mb-1"
+                      className="text-[#00ffcc] text-5xl font-medium tracking-tighter flex-1 justify-center flex mb-1"
                     />
                   </div>
-                  Projects Completed
+                  <span className="text-gray-300 text-sm">Projects Completed</span>
                 </div>
                 <div className="text-white h-full items-center flex flex-col">
-                  <div className="flex text-5xl">
+                  <div className="flex text-5xl text-[#00ffcc]">
                     <NumberTicker
                       value={1}
-                      className="text-white text-5xl font-medium tracking-tighter flex-1 justify-center flex mb-1"
+                      className="text-[#00ffcc] text-5xl font-medium tracking-tighter flex-1 justify-center flex mb-1"
                     />
-                    +
+                    <span className="text-[#00ffcc]">+</span>
                   </div>
-                  Years of Experience
+                  <span className="text-gray-300 text-sm">Years of Experience</span>
                 </div>
                 <div className="text-white h-full items-center flex flex-col">
-                  <div className="flex text-5xl">
+                  <div className="flex text-5xl text-[#00ffcc]">
                     <NumberTicker
                       value={MyExperiences.content.length}
-                      className="text-white font-medium tracking-tighter flex-1 justify-center mb-1"
+                      className="text-[#00ffcc] text-5xl font-medium tracking-tighter flex-1 justify-center mb-1"
                     />
                   </div>
-                  Organiztions worked with
+                  <span className="text-gray-300 text-sm">Organizations worked with</span>
                 </div>
               </div>
               <p className="flex gap-x-3">
                 <Link
                   href={UserData.github}
-                  className="text-white rounded-full p-2 transition-all duration-300 hover:text-[#ff00ff] hover:scale-110"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[#00ffcc] rounded-lg p-2 border-2 border-[#00ffcc] transition-all duration-300 hover:text-[#ff00ff] hover:border-[#ff00ff] hover:scale-110 hover:shadow-lg hover:shadow-[#ff00ff]/30"
                 >
-                  <Github />
+                  <Github size={24} />
                 </Link>
                 <Link
                   href={UserData.linkedin}
-                  className="text-white rounded-full p-2 transition-all duration-300 hover:text-[#ff00ff] hover:scale-110"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[#00ffcc] rounded-lg p-2 border-2 border-[#00ffcc] transition-all duration-300 hover:text-[#ff00ff] hover:border-[#ff00ff] hover:scale-110 hover:shadow-lg hover:shadow-[#ff00ff]/30"
                 >
-                  <Linkedin />
+                  <Linkedin size={24} />
                 </Link>
                 <Link
                   href={"/Contact"}
-                  className="text-white rounded-full p-2 transition-all duration-300 hover:text-[#ff00ff] hover:scale-110"
+                  className="text-[#00ffcc] rounded-lg p-2 border-2 border-[#00ffcc] transition-all duration-300 hover:text-[#ff00ff] hover:border-[#ff00ff] hover:scale-110 hover:shadow-lg hover:shadow-[#ff00ff]/30"
                 >
-                  <UserSearch />
+                  <UserSearch size={24} />
                 </Link>
               </p>
             </div>

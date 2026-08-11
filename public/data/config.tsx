@@ -13,8 +13,7 @@ export const UserData = {
   email: "mahadmunir6@gmail.com",
   phone: "+92 334 3005859",
   profession: "DevOps Engineer | AI Engineer | Software Developer ",
-  about:
-    "I am a DevOps Engineer with a strong foundation in Cloud Computing, AI, and Software Development. Currently, I am working as an Associate DevOps Engineer at HulHub Pakistan, where I focus on deploying full-stack applications, containerized services, and secure cloud infrastructures on AWS. I graduated from FAST-nuces in June 2025, where I built a strong base in AI and software engineering. I am AWS Cloud Practitioner certified and continuously sharpening my expertise in automation, DevOps, and security practices. Passionate about bridging DevOps, MLOps, and security, my goal is to grow into a Cloud Solution Architect who designs systems that are both innovative and reliable.",
+  about: `DevOps Engineer with expertise in Cloud Computing, AI, and Software Development. Currently at TPS Worldwide, focusing on CI/CD automation, Kubernetes orchestration, and infrastructure reliability for enterprise platforms. Graduated from FAST-NUCES (June 2025), pursuing Master's in Artificial Intelligence at IBA University. AWS Cloud Practitioner certified, passionate about bridging DevOps, MLOps, and security.`,
   github: "https://github.com/MMahad3",
   linkedin: "https://www.linkedin.com/in/mahad-munir/",
 };
@@ -106,9 +105,10 @@ export const MySkills = {
       content: [
         { name: "Azure", imgpath: "/data/images/azure.svg", proficiency: 1 },
         { name: "AWS", imgpath: "/data/images/aws.svg", proficiency: 1 },
-    
+        { name: "Oracle Cloud", imgpath: "/data/images/oracle.jpg", proficiency: 1 },
         { name: "Terraform", imgpath: "/data/images/terraform.svg", proficiency: 1 },
         { name: "Kubernetes", imgpath: "/data/images/kubernetes.svg", proficiency: 1 },
+        { name: "Helm", imgpath: "/data/images/helm.png", proficiency: 1 },
         {
           name: "Github Actions",
           imgpath: "/data/images/githubactions.svg",
@@ -120,6 +120,21 @@ export const MySkills = {
         { name: "Jenkins", imgpath: "/data/images/jenkins.png", proficiency: 1 },
         
         
+      ],
+    },
+    {
+      group: "CI/CD Platforms",
+      content: [
+        { name: "GitLab CI/CD", imgpath: "/data/images/gitlab.jpg", proficiency: 1 },
+        { name: "Azure DevOps", imgpath: "/data/images/azuredevops.png", proficiency: 1 },
+        { name: "GitHub CI/CD", imgpath: "/data/images/githubactions.svg", proficiency: 1 },
+      ],
+    },
+    {
+      group: "Monitoring & Observability",
+      content: [
+        { name: "Prometheus", imgpath: "/data/images/prometheus.png", proficiency: 1 },
+        { name: "Grafana", imgpath: "/data/images/grafana.png", proficiency: 1 },
       ],
     },
     {
@@ -209,6 +224,11 @@ export const MySkills = {
           imgpath: "/data/images/selenium.svg",
           proficiency: 1,
         },
+        {
+          name: "SonarQube",
+          imgpath: "/data/images/sonarqube.png",
+          proficiency: 1,
+        },
         
       ],
     },
@@ -230,7 +250,9 @@ export const MySkills = {
         
         { name: "Qiskit", imgpath: "/data/images/qiskit.svg", proficiency: 1 },
         
-    
+        { name: "Metabase", imgpath: "/data/images/metabase.png", proficiency: 1 },
+        { name: "Keycloak", imgpath: "/data/images/keycloak.jpg", proficiency: 1 },
+        { name: "Vault", imgpath: "/data/images/vault.png", proficiency: 1 },
         
         { name: "Canva", imgpath: "/data/images/canva.svg", proficiency: 1 },
         { name: "Figma", imgpath: "/data/images/figma.svg", proficiency: 1 },
@@ -375,7 +397,26 @@ export const MyExperiences = {
   icon: <BriefcaseBusiness className="scale-[60%]" />,
   href: "/Experience",
   content: [
-    
+    {
+      logo: "/data/logos/tps.jpg",
+      title: "TPS Worldwide",
+      positions: ["DevOps Engineer"],
+      location: "Karachi, Pakistan",
+      startDate: "Feb 2026",
+      endDate: "Present",
+      desc: "At TPS Worldwide, I work as a DevOps Engineer focused on CI/CD, Kubernetes, Helm, and deployment automation across enterprise payment and microservices platforms. I have worked on Azure DevOps pipelines for the IRIS payment platform, contributed to GitHub Actions based CI/CD for Platform X, and developed Python automation for configuration analysis, drift detection, Dapr validation, and Kubernetes resource comparison. I also took end to end ownership of the Helm Cleanup initiative, analyzing and consolidating complex Helm configurations and successfully delivering a fully cleaned, functional, and deployment ready values structure. Alongside this, I work extensively with Kubernetes resources, deployment workflows, and environment specific configurations to improve the reliability, consistency, and maintainability of application deployments.",
+    },
+
+    {
+      logo: "/data/images/hulhub.jpeg",
+      title: "HulHub Pakistan",
+      positions: ["Associate DevOps Engineer"],
+      location: "Karachi, Pakistan",
+      startDate: "Jun 2025",
+      endDate: "Jan 2026",
+      desc: "At HulHub, I contribute to the DevOps operations of the company’s flagship product, Beelinks, ensuring smooth deployments and reliable environments. My responsibilities include managing and maintaining staging, QA, and production environments, performing daily staging testing, deployments, and health checks, implementing Jenkins pipelines to automate deployments, and proactive monitoring and troubleshooting to maintain high availability and reliability across environments."
+    },
+
     {
       logo: "/data/images/sbp.png",
       title: "State Bank of Pakistan",
@@ -385,16 +426,6 @@ export const MyExperiences = {
       endDate: "Aug 2024",
       desc: "Researched fake and genuine currency note detection using machine learning, focusing on computer vision techniques for authentication. Due to mobile camera limitations, the project shifted to a research-based approach. Collaborated with mentors to explore algorithmic solutions and documented key findings on enhancing currency verification methods.",
     },
-    {
-      logo: "/data/images/hulhub.jpeg",
-      title: "HulHub Pakistan",
-      positions: ["Associate DevOps Engineer"],
-      location: "Karachi, Pakistan",
-      startDate: "Jun 2025",
-      endDate: "Present",
-      desc: "At HulHub, I contribute to the DevOps operations of the company’s flagship product, Beelinks, ensuring smooth deployments and reliable environments. My responsibilities include managing and maintaining staging, QA, and production environments, performing daily staging testing, deployments, and health checks, implementing Jenkins pipelines to automate deployments, and proactive monitoring and troubleshooting to maintain high availability and reliability across environments."
-    },
-    
   
   ],
 };
@@ -403,6 +434,14 @@ export const MyEducations = {
   icon: <GraduationCap className="scale-[60%]" />,
   href: "/Education",
   content: [
+    {
+      logo: "/data/logos/iba-rr.jpg",
+      title: "Masters in Artificial Intelligence",
+      location: "IBA University, Karachi, Pakistan",
+      startDate: "Aug 2026",
+      endDate: "Present",
+      desc:"",
+    },
     {
       logo: "/data/logos/FAST.png",
       title: "Bachelor Degree of Computer Science",
@@ -433,7 +472,7 @@ export const MyResume = {
   name: "Resume",
   icon: <FileText className="scale-[60%]" />,
   href: "/Resume",
-  resumePath: "/data/M_Resume.pdf",
+  resumePath: "/data/M-Mahad-Resume.pdf",
 };
 export const NavItems = {
   MySkills,

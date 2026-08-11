@@ -1,11 +1,13 @@
 "use client";
 import Link from "next/link";
 import { useState } from "react";
+import { usePathname } from "next/navigation";
 import { NavItems, UserData } from "../../../public/data/config";
 import { CodeXml, UserSearch } from "lucide-react";
 // import { Transition } from "./Transition";
 
 export default function Navbar() {
+  const pathname = usePathname();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   // const [route, setRoute] = useState(false);
   const toggleMobileMenu = () => {
@@ -62,22 +64,28 @@ export default function Navbar() {
 
             <div className="hidden lg:block">
               <ul className="flex flex-col mt-2 mb-4 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center">
-                {Object.keys(NavItems).map((item, index) => (
-                  <li
-                    key={index}
-                    className="flex items-center p-2 px-4 text-[#00ffcc] hover:text-[#ff00ff] transition-all duration-200">
-                    <Link
-                      href={
-                        NavItems[item as keyof typeof NavItems].href
-                      }
-                      className="flex items-center"
-                    >
-                      <div className="scale-[60%]"></div>
-                      {NavItems[item as keyof typeof NavItems].icon}
-                      {NavItems[item as keyof typeof NavItems].name}
-                    </Link>
-                  </li>
-                ))}
+                {Object.keys(NavItems).map((item, index) => {
+                  const href = NavItems[item as keyof typeof NavItems].href;
+                  const isActive = pathname === href;
+                  return (
+                    <li
+                      key={index}
+                      className={`flex items-center p-2 px-4 transition-all duration-200 ${
+                        isActive
+                          ? "text-[#ff00ff] border-b-2 border-[#ff00ff]"
+                          : "text-[#00ffcc] hover:text-[#ff00ff]"
+                      }`}>
+                      <Link
+                        href={href}
+                        className="flex items-center"
+                      >
+                        <div className="scale-[60%]"></div>
+                        {NavItems[item as keyof typeof NavItems].icon}
+                        {NavItems[item as keyof typeof NavItems].name}
+                      </Link>
+                    </li>
+                  );
+                })}
               </ul>
             </div> 
             <div className="hidden lg:flex lg:flex-1 lg:justify-end"><Link href={"/Contact"} className="text-[#0fc] flex hover:text-[#ff00ff] transition-all duration-200 p-2 px-4"><UserSearch className="scale-[60%]"/>Contact</Link></div>
