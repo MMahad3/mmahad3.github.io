@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import localFont from "next/font/local";
 import ScrollToTop from "@/components/myui/ScrollToTop";
 import Footer from "@/components/myui/Footer";
@@ -38,8 +39,10 @@ export default function RootLayout({
     <html lang="en">
       <head>
         {/* Google Analytics 4 */}
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-WM32XR0ESE"></script>
-        <script
+        <Script async src="https://www.googletagmanager.com/gtag/js?id=G-WM32XR0ESE" strategy="afterInteractive" />
+        <Script
+          id="google-analytics"
+          strategy="afterInteractive"
           dangerouslySetInnerHTML={{
             __html: `
               window.dataLayer = window.dataLayer || [];
