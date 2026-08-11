@@ -89,37 +89,36 @@ export default function TypingSpeedTest({ isOpen, onClose }: TypingSpeedTestProp
     });
   }, [userInput, currentText, timeLeft]);
 
-  // Timer logic
+  // Timer countdown effect
   useEffect(() => {
-    let interval: NodeJS.Timeout;
-    if (isRunning && timeLeft > 0) {
-      interval = setInterval(() => {
-        setTimeLeft((prev) => {
-          if (prev <= 1) {
-            setIsRunning(false);
-            return 0;
-          }
-          return prev - 1;
-        });
-      }, 1000);
-    }
+    if (!isRunning) return;
+
+    const interval = setInterval(() => {
+      setTimeLeft((prev) => {
+        if (prev <= 1) {
+          setIsRunning(false);
+          return 0;
+        }
+        return prev - 1;
+      });
+    }, 1000);
+
     return () => clearInterval(interval);
   }, [isRunning]);
 
-  // Handle result calculation when time ends
-  useEffect(() => {
-    if (timeLeft === 0 && isRunning === false && !result) {
-      calculateResult();
-    }
-  }, [timeLeft, isRunning, result, calculateResult]);
-
-  // Check for auto-complete when sentence is finished
+  // Auto-complete when sentence is finished
   useEffect(() => {
     if (isRunning && userInput.length >= currentText.length && currentText.length > 0) {
       setIsRunning(false);
+    }
+  }, [userInput, currentText.length, isRunning]);
+
+  // Show results when timer ends or auto-complete triggers
+  useEffect(() => {
+    if (!isRunning && userInput.length > 0 && !result) {
       calculateResult();
     }
-  }, [userInput, currentText, isRunning, calculateResult]);
+  }, [isRunning, userInput, result, calculateResult]);
 
   const startTest = () => {
     setTimeLeft(15);
