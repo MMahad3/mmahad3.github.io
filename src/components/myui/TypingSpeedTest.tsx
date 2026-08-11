@@ -1,6 +1,6 @@
 "use client";
-import { useState, useEffect, useRef } from "react";
-import { X, RotateCcw, Volume2 } from "lucide-react";
+import { useState, useEffect, useRef, useCallback } from "react";
+import { X, RotateCcw } from "lucide-react";
 
 const typingTexts = [
   "The quick brown fox jumps over the lazy dog",
@@ -60,29 +60,7 @@ export default function TypingSpeedTest({ isOpen, onClose }: TypingSpeedTestProp
     }
   }, [isOpen, testStarted, isRunning]);
 
-  // Timer logic
-  useEffect(() => {
-    let interval: NodeJS.Timeout;
-    if (isRunning && timeLeft > 0) {
-      interval = setInterval(() => {
-        setTimeLeft((prev) => prev - 1);
-      }, 1000);
-    } else if (timeLeft === 0 && isRunning) {
-      setIsRunning(false);
-      calculateResult();
-    }
-    return () => clearInterval(interval);
-  }, [isRunning, timeLeft]);
-
-  // Check for auto-complete when sentence is finished
-  useEffect(() => {
-    if (isRunning && userInput.length >= currentText.length && currentText.length > 0) {
-      setIsRunning(false);
-      calculateResult();
-    }
-  }, [userInput, currentText, isRunning]);
-
-  const calculateResult = () => {
+  const calculateResult = useCallback(() => {
     const words = userInput.trim().split(/\s+/).length;
     const timeSpent = 15 - timeLeft || 1; // Minimum 1 second
     const minutes = timeSpent / 60;
@@ -109,7 +87,29 @@ export default function TypingSpeedTest({ isOpen, onClose }: TypingSpeedTestProp
       totalChars,
       errorChars,
     });
-  };
+  }, [userInput, currentText, timeLeft]);
+
+  // Timer logic
+  useEffect(() => {
+    let interval: NodeJS.Timeout;
+    if (isRunning && timeLeft > 0) {
+      interval = setInterval(() => {
+        setTimeLeft((prev) => prev - 1);
+      }, 1000);
+    } else if (timeLeft === 0 && isRunning) {
+      setIsRunning(false);
+      calculateResult();
+    }
+    return () => clearInterval(interval);
+  }, [isRunning, timeLeft, calculateResult]);
+
+  // Check for auto-complete when sentence is finished
+  useEffect(() => {
+    if (isRunning && userInput.length >= currentText.length && currentText.length > 0) {
+      setIsRunning(false);
+      calculateResult();
+    }
+  }, [userInput, currentText, isRunning, calculateResult]);
 
   const startTest = () => {
     setIsRunning(true);
@@ -277,7 +277,7 @@ export default function TypingSpeedTest({ isOpen, onClose }: TypingSpeedTestProp
             <div className="space-y-6">
               <div className="text-center">
                 <h3 className="text-3xl font-bold text-[#00ffcc] mb-2">Test Complete! 🎉</h3>
-                <p className="text-gray-400">Here's how you performed:</p>
+                <p className="text-gray-400">Here&apos;s how you performed:</p>
               </div>
 
               <div className="grid grid-cols-2 gap-4">

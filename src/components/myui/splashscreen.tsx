@@ -15,7 +15,7 @@ export default function SplashScreen({ onFinish }: { onFinish: () => void }) {
     }, 3000); // show for 3 seconds
 
     return () => clearTimeout(timer);
-  }, []);
+  }, [onFinish]);
 
   if (!show) return null;
 
